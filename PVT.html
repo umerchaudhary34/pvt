@@ -1,0 +1,74 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <title>Psychomotor Vigilance Task</title>
+
+    <style type="text/css">
+      #download-button {
+        margin-top: 2px;
+        width: 15%;
+        height: 3rem;
+        text-transform: capitalize;
+        font-size: 0.9rem;
+        font-weight: 700;
+        font-family: 'Roboto', sans-serif;
+        color: white;
+        background-color: rgb(37, 99, 235);
+        border-radius: 4px;
+        border: none;
+        cursor: pointer;
+      }
+      #box {
+        position: relative;
+        width: 400px;
+        height: 400px;
+
+        border: 2px solid black;
+      }
+      #numeric {
+        width: 50px;
+        height: 20px;
+        position: absolute;
+        top: 165px;
+        left: 165px;
+        color: black;
+      }
+      #stop {
+        background-color: white;
+        width: 0px;
+        height: 0px;
+        border: 0px;
+      }
+    </style>
+    <script type="text/javascript" src="z.js"></script>
+  </head>
+
+  <body onload="init()">
+    <div class="container" align="center">
+      <br /><br /><br /><br /><br />
+
+      <div class="content">
+        <div id="box">
+          <div id="numeric"></div>
+        </div>
+
+        <form id="main" name="main" method="post" action="">
+          <div id="buttons">
+            <input
+              type="button"
+              id="download-button"
+              value="Start Test"
+              onclick="startEntireTest()"
+            />
+          </div>
+        </form>
+        <div id="responseOut"></div>
+
+        <!-- end .content -->
+      </div>
+
+      <!-- end .container -->
+    </div>
+  </body>
+</html>
