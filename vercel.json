@@ -7,13 +7,13 @@
 		},
 		{
 			"src": "server.js",
-			"use": "@now/node"
+			"use": "@now/node-server"
 		}
 	],
 	"routes": [
 		{
-			"src": "/(.*)",
-			"dest": "/index.html"
+			"src": "/api/(.*)",
+			"dest": "server.js"
 		}
 	]
 }
