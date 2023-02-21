@@ -17,8 +17,9 @@ const seconds = now.getSeconds().toString().padStart(2, "0");
 const time = `${hours}${minutes}${seconds}`;
 // Combine the date and time into a single string
 const dateTime = `${date}_${time}`;
+var baseUrl;
 
-app.use(cors());
+app.use(cors({ origin: "*" }));
 
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
@@ -33,6 +34,10 @@ const storage = multer.diskStorage({
 const multerUploader = multer({ storage: storage });
 const upload = multerUploader.single("file");
 
+function getBaseUrl(req) {
+    return `${req.protocol}://${req.get("host")}`;
+}
+
 app.post("/upload/csv", function (req, res) {
     upload(req, res, function (err) {
         let file = req.file;
@@ -46,9 +51,8 @@ app.post("/upload/csv", function (req, res) {
                 message: "An error occurred"
             });
         }
-        // Get the path of the uploaded file
-        const filePath = path.join(__dirname, "public/uploads", file.filename);
-        const fileUrl = `http://localhost:3000/uploads/${file.filename}`;
+        baseUrl = getBaseUrl(req);
+        const fileUrl = `${baseUrl}/uploads/${file.filename}`;
         return res.status(200).json({
             success: true,
             message: "File uploaded successfully",
@@ -60,5 +64,6 @@ app.post("/upload/csv", function (req, res) {
 app.use(express.static(__dirname + "/public"));
 
 app.listen(3000, function () {
-    console.log("Server started at http://localhost:3000");
+    baseUrl = `${this.address().address}:${this.address().port}`;
+    console.log(`Server started at ${baseUrl}`);
 });
