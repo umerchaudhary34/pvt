@@ -13,9 +13,6 @@ var userId = localStorage.getItem("userId") || 0;
 var id = userId;
 var timerOn = false;
 const API_BASE_URL = window.location.origin;
-console.log(API_BASE_URL);
-
-// const API_BASE_URL = "http://localhost:3000";
 
 // Start and stop times for each response measurement
 var startT, stopT;
