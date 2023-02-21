@@ -1,7 +1,7 @@
 // Initialize variables
 var testTimes = [];
 var responseTimes = [];
-var testDuration = 0.2; // 10 minutes
+var testDuration = 10; // 10 minutes
 var minResponseTime = 100; // false start threshold in msec
 var maxResponseTime = 1500; // threshold in msec to move on to next target
 var minDelay = 1; // minimum delay of 1 sec before target appears
@@ -13,7 +13,6 @@ var userId = localStorage.getItem("userId") || 0;
 var id = userId;
 var timerOn = false;
 const API_BASE_URL = window.location.origin;
-console.log(API_BASE_URL);
 
 // const API_BASE_URL = "http://localhost:3000";
 
