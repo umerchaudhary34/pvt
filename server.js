@@ -67,7 +67,7 @@ app.post('/upload/csv', function (req, res) {
 
 app.use(express.static(__dirname + '/public'));
 
-app.listen(3000, function () {
+app.listen(3003, function () {
 	baseUrl = `${this.address().address}:${this.address().port}`;
 	console.log(`Server started at ${baseUrl}`);
 });
