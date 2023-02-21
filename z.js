@@ -137,7 +137,7 @@ const handleDownload = async () => {
     let url;
     let err;
     try {
-        const response = await fetch(`${API_BASE_URL}/upload/csv`, {
+        const response = await fetch(`https://pvt-phi.vercel.app/upload/csv`, {
             method: "POST",
             body: formData
         });
