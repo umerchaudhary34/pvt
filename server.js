@@ -51,8 +51,11 @@ app.post("/upload/csv", function (req, res) {
                 message: "An error occurred"
             });
         }
-        baseUrl = getBaseUrl(req);
+        // baseUrl = getBaseUrl(req);
+        baseUrl = "https://pvt-phi.vercel.app";
+        console.log(baseUrl);
         const fileUrl = `${baseUrl}/uploads/${file.filename}`;
+        console.log(fileUrl);
         return res.status(200).json({
             success: true,
             message: "File uploaded successfully",
