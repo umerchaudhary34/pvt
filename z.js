@@ -1,8 +1,7 @@
-// import axios from "axios";
 // Initialize variables
 var testTimes = [];
 var responseTimes = [];
-var testDuration = 3; // 10 minutes
+var testDuration = 3; // 3 minutes
 var minResponseTime = 100; // false start threshold in msec
 var maxResponseTime = 1500; // threshold in msec to move on to next target
 var minDelay = 1; // minimum delay of 1 sec before target appears
@@ -134,14 +133,6 @@ const handleDownload = async () => {
         err = error;
         console.error("There was a problem with the fetch operation:", error);
     }
-    // axios.post("https://pvt-phi.vercel.app/upload/csv", formData).then(
-    //     (response) => {
-    //         console.log(response);
-    //     },
-    //     (error) => {
-    //         console.log(error);
-    //     }
-    // );
     var str = !err
         ? "<h2>Thank you for your participation </h2> " +
           `<h4> <a href=${url} >Download</a> </h4> `
